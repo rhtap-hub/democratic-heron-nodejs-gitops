@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: democratic-heron-nodejs 
+  janus-idp.io/tekton: democratic-heron-nodejs
+  backstage.io/kubernetes-id: democratic-heron-nodejs
+  backstage.io/kubernetes-namespace: rhtap-demo 
+  app.kubernetes.io/part-of: democratic-heron-nodejs
+resources: 
+- application-dev.yaml 
+- application-stage.yaml 
+- application-prod.yaml  

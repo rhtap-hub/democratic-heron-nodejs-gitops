@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: democratic-heron-nodejs-gitops
+  description: This is GitOps manifest for democratic-heron-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: democratic-heron-nodejs
+    janus-idp.io/tekton: democratic-heron-nodejs 
+    backstage.io/kubernetes-id: democratic-heron-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:democratic-heron-nodejs
